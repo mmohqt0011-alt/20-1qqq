@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10 🌸</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts hỗ trợ tiếng Việt đẹp mắt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        script: ['"Dancing Script"', 'cursive'],
+                        sans: ['"Quicksand"', 'sans-serif'],
+                    },
+                    colors: {
+                        pastel: {
+                            50: '#fff5f7',
+                            100: '#ffeef2',
+                            200: '#ffd6e0',
+                            300: '#ffb3c6',
+                            400: '#ff8fab',
+                            500: '#fb6f92',
+                            600: '#e05277',
+                            700: '#b83b5e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: radial-gradient(circle at top, #fff5f7 0%, #ffe3ec 45%, #ffd6e0 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            user-select: none;
+        }
+
+        /* Hiệu ứng lơ lửng cho phong bì */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(1deg); }
+        }
+
+        @keyframes pulseHeart {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .animate-float {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+
+        .animate-heart {
+            animation: pulseHeart 1.6s ease-in-out infinite;
+        }
+
+        /* Cấu trúc Phong Bì 3D */
+        .envelope-wrapper {
+            perspective: 1200px;
+            cursor: pointer;
+        }
+
+        .envelope {
+            position: relative;
+            width: 320px;
+            height: 210px;
+            background: linear-gradient(135deg, #ff9ebb 0%, #fb6f92 100%);
+            border-radius: 0 0 16px 16px;
+            box-shadow: 0 20px 45px rgba(251, 111, 146, 0.35), 0 0 0 2px rgba(255, 255, 255, 0.6) inset;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media (min-width: 640px) {
+            .envelope {
+                width: 400px;
+                height: 260px;
+            }
+        }
+
+        .envelope-wrapper:hover .envelope {
+            transform: translateY(-6px) scale(1.02);
+        }
+
+        /* Nắp phong bì trên */
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #ff8fab 0%, #fb6f92 100%);
+            clip-path: polygon(0 0, 50% 58%, 100% 0);
+            transform-origin: top;
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.3s;
+            z-index: 30;
+            border-radius: 12px 12px 0 0;
+            filter: drop-shadow(0 6px 10px rgba(184, 59, 94, 0.2));
+        }
+
+        /* Mặt trước phong bì (2 cánh trái phải & đáy) */
+        .envelope-pocket {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #ffb3c6 0%, #ff8fab 50%, #fb6f92 100%);
+            clip-path: polygon(0 0, 50% 52%, 100% 0, 100% 100%, 0 100%);
+            border-radius: 0 0 16px 16px;
+            z-index: 20;
+        }
+
+        .envelope-bottom-flap {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, #ff9ebb 0%, #ffc2d1 100%);
+            clip-path: polygon(0 100%, 50% 48%, 100% 100%);
+            border-radius: 0 0 16px 16px;
+            z-index: 22;
+        }
+
+        /* Tấm thiệp bên trong phong bì */
+        .envelope-letterPreview {
+            position: absolute;
+            left: 6%;
+            right: 6%;
+            bottom: 10px;
+            height: 88%;
+            background: #fffafb;
+            border-radius: 12px;
+            z-index: 10;
+            transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border: 2px dashed #ffd6e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        /* Con dấu sáp trái tim */
+        .wax-seal {
+            position: absolute;
+            top: 52%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 58px;
+            height: 58px;
+            background: radial-gradient(circle at 30% 30%, #ff5c8a, #c9184a);
+            border-radius: 50%;
+            z-index: 35;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 16px rgba(201, 24, 74, 0.45), 0 0 0 4px rgba(255, 255, 255, 0.5);
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+
+        /* Khi phong bì mở */
+        .envelope.open .envelope-flap {
+            transform: rotateX(180deg);
+            z-index: 5;
+        }
+
+        .envelope.open .wax-seal {
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+        }
+
+        .envelope.open .envelope-letterPreview {
+            transform: translateY(-95px);
+            z-index: 25;
+        }
+
+        /* Khung thiệp chính khi mở hoàn toàn */
+        .greeting-card-modal {
+            transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .card-paper {
+            background: linear-gradient(180deg, #ffffff 0%, #fff8fa 100%);
+            background-image: 
+                radial-gradient(#ffd6e0 1px, transparent 1px), 
+                radial-gradient(#ffeef2 1px, #ffffff 1px);
+            background-size: 28px 28px;
+            background-position: 0 0, 14px 14px;
+            box-shadow: 
+                0 25px 60px -15px rgba(224, 82, 119, 0.35),
+                0 0 0 1px rgba(255, 182, 193, 0.5),
+                0 0 0 8px rgba(255, 255, 255, 0.7);
+        }
+
+        /* Thanh cuộn tinh tế cho lời chúc */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 5px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #fff0f3;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ffb3c6;
+            border-radius: 10px;
+        }
+
+        /* Đĩa nhạc xoay */
+        @keyframes spinSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .spin-music {
+            animation: spinSlow 6s linear infinite;
+        }
+    </style>
+</head>
+<body class="relative flex flex-col justify-between min-h-screen text-slate-700">
+
+    <!-- Canvas Hiệu ứng Hoa Rơi & Trái Tim Lơ Lửng -->
+    <canvas id="petalCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+    <!-- Canvas Hiệu ứng Pháo Giấy (Confetti) -->
+    <canvas id="confettiCanvas" class="fixed inset-0 pointer-events-none z-50"></canvas>
+
+    <!-- Thanh điều hướng phía trên -->
+    <header class="relative z-30 w-full max-w-5xl mx-auto px-4 pt-4 sm:pt-6 flex flex-wrap items-center justify-between gap-3">
+        <!-- Logo / Badge ngày lễ -->
+        <div class="flex items-center gap-2.5 bg-white/80 backdrop-blur-md px-4 py-2 rounded-full shadow-sm border border-pastel-200">
+            <span class="w-8 h-8 rounded-full bg-pastel-100 flex items-center justify-center text-pastel-600 shadow-inner">
+                <i class="fa-solid fa-spa"></i>
+            </span>
+            <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-pastel-600">Happy Women's Day</p>
+                <p class="text-xs text-slate-500 font-medium">Ngày Phụ Nữ Việt Nam 20/10</p>
+            </div>
+        </div>
+
+        <!-- Cụm nút điều khiển -->
+        <div class="flex items-center gap-2 sm:gap-3">
+            <!-- Nút Cá nhân hóa tên -->
+            <button id="openCustomizeBtn" class="flex items-center gap-2 bg-white/85 hover:bg-white text-pastel-700 font-semibold text-xs sm:text-sm px-3.5 py-2.5 rounded-full shadow-sm border border-pastel-200 transition-all hover:shadow-md active:scale-95">
+                <i class="fa-solid fa-wand-magic-sparkles text-pastel-500"></i>
+                <span>Ghi tên người nhận</span>
+            </button>
+
+            <!-- Nút Bật/Tắt nhạc nền -->
+            <button id="musicToggleBtn" class="flex items-center gap-2 bg-pastel-500 hover:bg-pastel-600 text-white font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-full shadow-md shadow-pastel-300/50 transition-all active:scale-95" title="Bật/Tắt giai điệu hộp nhạc">
+                <i id="musicIcon" class="fa-solid fa-music"></i>
+                <span id="musicStatusText">Bật nhạc</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Khu vực trung tâm -->
+    <main class="relative z-20 flex-1 flex flex-col items-center justify-center px-4 py-6 w-full max-w-4xl mx-auto">
+
+        <!-- MÀN HÌNH 1: PHONG BÌ THƯ TƯƠNG TÁC -->
+        <section id="envelopeStage" class="flex flex-col items-center justify-center text-center transition-all duration-500">
+            <!-- Tiêu đề chào mừng -->
+            <div class="mb-8 sm:mb-10 max-w-lg">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-pastel-200/70 text-pastel-700 text-xs font-bold tracking-widest uppercase mb-3">
+                    ✨ Món quà nhỏ dành tặng bạn ✨
+                </span>
+                <h1 class="font-script text-4xl sm:text-6xl font-bold text-pastel-700 drop-shadow-sm leading-tight">
+                    Gửi Một Nửa Thế Giới
+                </h1>
+                <p class="mt-2 text-sm sm:text-base text-slate-600 font-medium">
+                    Có một bức thư ngập tràn yêu thương đang chờ <span id="envelopeRecipientPreview" class="text-pastel-600 font-bold underline decoration-wavy decoration-pastel-400">bạn</span> khám phá!
+                </p>
+            </div>
+
+            <!-- Phong bì tương tác -->
+            <div id="envelopeTrigger" class="envelope-wrapper animate-float my-2" role="button" tabindex="0" aria-label="Nhấn để mở phong bì chúc mừng 20/10">
+                <div id="envelopeElement" class="envelope">
+                    <!-- Nắp trên -->
+                    <div class="envelope-flap"></div>
+
+                    <!-- Thiệp lấp ló bên trong -->
+                    <div class="envelope-letterPreview">
+                        <p class="font-script text-2xl sm:text-3xl text-pastel-600 font-bold">Happy 20/10</p>
+                        <p class="text-xs text-slate-400 mt-1">Dành tặng người tuyệt vời nhất 🌸</p>
+                    </div>
+
+                    <!-- Túi phong bì -->
+                    <div class="envelope-pocket"></div>
+                    <div class="envelope-bottom-flap"></div>
+
+                    <!-- Con dấu sáp Trái Tim -->
+                    <div class="wax-seal">
+                        <i class="fa-solid fa-heart text-white text-xl animate-heart"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hướng dẫn nhấn mở -->
+            <div class="mt-9 flex flex-col items-center gap-2">
+                <button id="openCardActionBtn" class="group relative inline-flex items-center gap-2.5 bg-gradient-to-r from-pastel-500 to-pink-500 hover:from-pastel-600 hover:to-pink-600 text-white font-bold px-7 py-3.5 rounded-full shadow-lg shadow-pastel-400/50 transition-all hover:-translate-y-0.5 active:scale-95">
+                    <i class="fa-regular fa-envelope-open text-lg transition-transform group-hover:rotate-12"></i>
+                    <span>Chạm để mở thiệp 20/10</span>
+                </button>
+                <p class="text-xs text-slate-500 italic mt-1">
+                    <i class="fa-solid fa-sparkles text-pastel-500 mr-1"></i>Nhấn vào phong bì hoặc nút phía trên để bung pháo hoa
+                </p>
+            </div>
+        </section>
+
+        <!-- MÀN HÌNH 2: TẤM THIỆP ĐÃ MỞ -->
+        <section id="cardStage" class="greeting-card-modal hidden opacity-0 scale-95 w-full max-w-xl mx-auto">
+            <div class="card-paper relative rounded-3xl p-6 sm:p-9 border border-pastel-200 overflow-hidden">
+                
+                <!-- Hoa văn trang trí góc thiệp -->
+                <div class="absolute -top-6 -left-6 w-24 h-24 bg-pastel-200/50 rounded-full blur-xl pointer-events-none"></div>
+                <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-pastel-300/40 rounded-full blur-xl pointer-events-none"></div>
+
+                <!-- Header tấm thiệp -->
+                <div class="relative flex items-center justify-between border-b border-pastel-200/80 pb-4 mb-5">
+                    <div class="flex items-center gap-2.5">
+                        <span class="w-10 h-10 rounded-2xl bg-pastel-100 text-pastel-600 flex items-center justify-center text-lg shadow-sm">
+                            🌷
+                        </span>
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-widest text-pastel-500 block">Thiệp Chúc Mừng</span>
+                            <h2 class="font-script text-2xl sm:text-3xl font-bold text-pastel-700">Ngày Phụ Nữ Việt Nam 20/10</h2>
+                        </div>
+                    </div>
+
+                    <!-- Nút đóng thiệp lại -->
+                    <button id="closeCardBtn" class="w-9 h-9 rounded-full bg-pastel-50 hover:bg-pastel-100 text-pastel-600 flex items-center justify-center transition-colors" title="Gấp thiệp lại">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Bộ lọc chủ đề lời chúc -->
+                <div class="flex flex-wrap items-center gap-1.5 mb-4">
+                    <span class="text-xs font-semibold text-slate-400 mr-1">Chủ đề:</span>
+                    <button data-category="all" class="wish-cat-btn active-cat text-xs font-semibold px-3 py-1 rounded-full bg-pastel-500 text-white transition-all">
+                        Tất cả ✨
+                    </button>
+                    <button data-category="sweet" class="wish-cat-btn text-xs font-semibold px-3 py-1 rounded-full bg-pastel-100 text-pastel-700 hover:bg-pastel-200 transition-all">
+                        Ngọt ngào 💖
+                    </button>
+                    <button data-category="friends" class="wish-cat-btn text-xs font-semibold px-3 py-1 rounded-full bg-pastel-100 text-pastel-700 hover:bg-pastel-200 transition-all">
+                        Bạn bè & Đồng nghiệp 🌸
+                    </button>
+                    <button data-category="funny" class="wish-cat-btn text-xs font-semibold px-3 py-1 rounded-full bg-pastel-100 text-pastel-700 hover:bg-pastel-200 transition-all">
+                        Đáng yêu & Vui nhộn 🥰
+                    </button>
+                </div>
+
+                <!-- Nội dung bức thư -->
+                <div class="relative bg-white/90 rounded-2xl p-5 sm:p-6 border border-pastel-200 shadow-inner min-h-[210px] flex flex-col justify-between">
+                    <!-- Dấu ngoặc kép trang trí -->
+                    <i class="fa-solid fa-quote-left text-3xl text-pastel-200/80 absolute top-3 left-4 pointer-events-none"></i>
+
+                    <!-- Lời chào đầu thư -->
+                    <div class="relative z-10 mb-2">
+                        <p class="font-script text-2xl sm:text-3xl text-pastel-700 font-bold">
+                            Thân gửi <span id="cardRecipientName" class="text-pink-600 underline decoration-pastel-300 decoration-2 underline-offset-4">Các bạn nữ xinh đẹp</span>,
+                        </p>
+                    </div>
+
+                    <!-- Nội dung lời chúc -->
+                    <div id="wishTextContainer" class="relative z-10 my-3 custom-scrollbar max-h-48 overflow-y-auto pr-1 transition-opacity duration-300">
+                        <p id="wishContent" class="text-slate-700 text-base sm:text-lg leading-relaxed font-medium">
+                            Nhân ngày Phụ nữ Việt Nam 20/10, chúc bạn luôn rạng rỡ như những đóa hoa mùa thu, ngập tràn niềm vui, hạnh phúc và luôn được yêu thương trọn vẹn mỗi ngày!
+                        </p>
+                    </div>
+
+                    <!-- Chữ ký cuối thư -->
+                    <div class="relative z-10 mt-3 pt-3 border-t border-dashed border-pastel-200 flex items-center justify-between text-sm">
+                        <span class="text-xs text-pastel-500 font-semibold flex items-center gap-1">
+                            <i class="fa-solid fa-heart text-pink-500 animate-heart"></i> 20 / 10 Ngọt Ngào
+                        </span>
+                        <div class="text-right">
+                            <span class="text-xs text-slate-400 block">Người gửi lời chúc</span>
+                            <span id="cardSenderName" class="font-script text-xl font-bold text-pastel-700">Một người luôn quý mến bạn 💌</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cụm trang trí hoa nhỏ dưới thư -->
+                <div class="flex items-center justify-center gap-3 my-4 text-pastel-400 text-xs">
+                    <span class="h-[1px] w-12 bg-pastel-200"></span>
+                    <span>🌸 💗 🌸</span>
+                    <span class="h-[1px] w-12 bg-pastel-200"></span>
+                </div>
+
+                <!-- Các nút tương tác trên thiệp -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                    <!-- Đổi lời chúc ngẫu nhiên -->
+                    <button id="randomWishBtn" class="col-span-2 sm:col-span-1 flex items-center justify-center gap-2 bg-gradient-to-r from-pastel-500 to-pink-500 hover:from-pastel-600 hover:to-pink-600 text-white font-bold text-xs sm:text-sm py-3 px-4 rounded-xl shadow-md shadow-pastel-300/60 transition-all active:scale-95">
+                        <i class="fa-solid fa-dice text-base"></i>
+                        <span>Đổi lời chúc</span>
+                    </button>
+
+                    <!-- Bắn pháo giấy chúc mừng -->
+                    <button id="celebrateBtn" class="flex items-center justify-center gap-2 bg-pastel-100 hover:bg-pastel-200 text-pastel-700 font-bold text-xs sm:text-sm py-3 px-4 rounded-xl transition-all active:scale-95">
+                        <i class="fa-solid fa-champagne-glasses text-pastel-600"></i>
+                        <span>Tung hoa</span>
+                    </button>
+
+                    <!-- Sao chép lời chúc -->
+                    <button id="copyWishBtn" class="flex items-center justify-center gap-2 bg-pastel-100 hover:bg-pastel-200 text-pastel-700 font-bold text-xs sm:text-sm py-3 px-4 rounded-xl transition-all active:scale-95">
+                        <i class="fa-regular fa-copy text-pastel-600"></i>
+                        <span>Sao chép</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL CÁ NHÂN HÓA TÊN NGƯỜI NHẬN & LỜI CHÚC -->
+    <div id="customizeModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl border border-pastel-200 animate-fadeIn">
+            <div class="flex items-center justify-between border-b border-pastel-100 pb-3 mb-4">
+                <div class="flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-full bg-pastel-100 text-pastel-600 flex items-center justify-center">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </span>
+                    <h3 class="font-bold text-lg text-slate-800">Cá Nhân Hóa Tấm Thiệp</h3>
+                </div>
+                <button id="closeCustomizeModalBtn" class="w-8 h-8 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-600 flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form id="customizeForm" class="space-y-4">
+                <div>
+                    <label for="recipientInput" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                        Tên bạn nữ / Người nhận 🌸
+                    </label>
+                    <input type="text" id="recipientInput" maxlength="50" placeholder="VD: Thảo Vy, Các bạn nữ lớp 12A, Hội chị em..." 
+                        class="w-full px-4 py-2.5 rounded-xl border border-pastel-300 focus:border-pastel-500 focus:ring-2 focus:ring-pastel-200 outline-none text-sm font-medium text-slate-700 transition-all">
+                </div>
+
+                <div>
+                    <label for="senderInput" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                        Tên người gửi 💌
+                    </label>
+                    <input type="text" id="senderInput" maxlength="50" placeholder="VD: Tập thể nam sinh, Minh Tuấn, Người bí ẩn..." 
+                        class="w-full px-4 py-2.5 rounded-xl border border-pastel-300 focus:border-pastel-500 focus:ring-2 focus:ring-pastel-200 outline-none text-sm font-medium text-slate-700 transition-all">
+                </div>
+
+                <div>
+                    <label for="customWishInput" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                        Tự viết lời chúc riêng (Tùy chọn) ✨
+                    </label>
+                    <textarea id="customWishInput" rows="3" placeholder="Để trống nếu bạn muốn dùng kho lời chúc 20/10 có sẵn..." 
+                        class="w-full px-4 py-2.5 rounded-xl border border-pastel-300 focus:border-pastel-500 focus:ring-2 focus:ring-pastel-200 outline-none text-sm font-medium text-slate-700 transition-all resize-none"></textarea>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 pt-2">
+                    <button type="button" id="cancelCustomizeBtn" class="px-4 py-2.5 rounded-xl text-xs font-bold text-slate-500 hover:bg-slate-100 transition-all">
+                        Hủy
+                    </button>
+                    <button type="submit" class="px-6 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-pastel-500 to-pink-500 text-white shadow-md shadow-pastel-300 hover:opacity-95 transition-all">
+                        Lưu & Áp dụng 💖
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Thông báo Toast (Thay cho alert) -->
+    <div id="toastNotification" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 translate-y-4 transition-all duration-300">
+        <div class="bg-slate-800/90 backdrop-blur-md text-white text-xs sm:text-sm font-semibold px-5 py-3 rounded-full shadow-xl flex items-center gap-2.5 border border-white/15">
+            <i class="fa-solid fa-circle-check text-pastel-400 text-base"></i>
+            <span id="toastMessage">Đã sao chép lời chúc!</span>
+        </div>
+    </div>
+
+    <!-- Chân trang -->
+    <footer class="relative z-20 text-center py-4 px-4 text-xs text-slate-500 font-medium">
+        <p>Chúc một nửa thế giới ngày 20/10 luôn xinh đẹp, rạng ngời và ngập tràn yêu thương 🌸</p>
+    </footer>
+
+    <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, HIỆU ỨNG & ÂM THANH -->
+    <script>
+        /* ==========================================================================
+           1. DANH SÁCH LỜI CHÚC 20/10 Ý NGHĨA & PHONG PHÚ
+           ========================================================================== */
+        const wishesDatabase = [
+            {
+                category: 'sweet',
+                text: 'Nhân ngày Phụ nữ Việt Nam 20/10, chúc bạn luôn rạng rỡ như những đóa hoa mùa thu, giữ mãi nụ cười tươi tắn trên môi và luôn được yêu thương, trân trọng mỗi ngày!'
+            },
+            {
+                category: 'sweet',
+                text: 'Chúc bạn một ngày 20/10 thật ấm áp và trọn vẹn! Mong rằng mọi điều dịu dàng, may mắn và ngọt ngào nhất của thế gian này sẽ luôn tìm đến bên bạn.'
+            },
+            {
+                category: 'sweet',
+                text: 'Thế giới trở nên tươi đẹp và dịu dàng hơn biết bao vì có sự hiện diện của phái đẹp. Chúc bạn ngày 20/10 ngập tràn hoa, quà và những niềm vui bất ngờ nhé!'
+            },
+            {
+                category: 'friends',
+                text: 'Gửi tới các bạn nữ tuyệt vời nhất! Chúc các bạn ngày 20/10 nhận được thật nhiều hoa, nhiều quà, luôn tự tin, tỏa sáng và đạt được mọi ước mơ mà mình theo đuổi.'
+            },
+            {
+                category: 'friends',
+                text: 'Chúc hội chị em ngày 20/10 luôn trẻ trung, xinh đẹp bất chấp thời gian, công việc hay học tập đều thuận buồm xuôi gió và lúc nào cũng tràn đầy năng lượng tích cực!'
+            },
+            {
+                category: 'friends',
+                text: 'Nhân ngày 20/10, xin gửi lời cảm ơn và lời chúc tốt đẹp nhất đến những bông hoa xinh đẹp. Chúc các bạn mỗi ngày trôi qua đều là một ngày vui và đáng nhớ!'
+            },
+            {
+                category: 'funny',
+                text: 'Chúc bạn ngày 20/10: Nhan sắc thăng hạng vù vù, tiền bạc rủng rỉnh đầy túi, ăn hoài không béo và luôn có người sẵn sàng chiều chuộng mọi lúc mọi nơi!'
+            },
+            {
+                category: 'funny',
+                text: 'Thông báo khẩn nhân ngày 20/10: Chúc bạn hôm nay xinh đẹp gấp đôi hôm qua, vui vẻ gấp bội ngày thường, nhận quà mỏi tay và cười tươi suốt cả ngày nhé!'
+            },
+            {
+                category: 'funny',
+                text: 'Chúc các bạn nữ 20/10 vui vẻ như chim sẻ, khỏe mạnh như đại bàng, giàu sang như chim phụng và suốt năm luôn lung linh rạng ngời như nữ hoàng!'
+            },
+            {
+                category: 'sweet',
+                text: 'Bạn xứng đáng với tất cả những bông hoa thơm ngát và những lời chúc chân thành nhất. Chúc bạn một ngày 20/10 bình yên, hạnh phúc và rực rỡ theo cách riêng của mình!'
+            }
+        ];
+
+        // Trạng thái ứng dụng
+        let currentCategory = 'all';
+        let currentWishIndex = 0;
+        let recipientName = 'Các bạn nữ xinh đẹp';
+        let senderName = 'Một người luôn quý mến bạn 💌';
+        let isEnvelopeOpen = false;
+
+        // DOM Elements
+        const envelopeStage = document.getElementById('envelopeStage');
+        const envelopeTrigger = document.getElementById('envelopeTrigger');
+        const envelopeElement = document.getElementById('envelopeElement');
+        const openCardActionBtn = document.getElementById('openCardActionBtn');
+        const cardStage = document.getElementById('cardStage');
+        const closeCardBtn = document.getElementById('closeCardBtn');
+
+        const wishContent = document.getElementById('wishContent');
+        const wishTextContainer = document.getElementById('wishTextContainer');
+        const randomWishBtn = document.getElementById('randomWishBtn');
+        const celebrateBtn = document.getElementById('celebrateBtn');
+        const copyWishBtn = document.getElementById('copyWishBtn');
+        const categoryButtons = document.querySelectorAll('.wish-cat-btn');
+
+        const envelopeRecipientPreview = document.getElementById('envelopeRecipientPreview');
+        const cardRecipientName = document.getElementById('cardRecipientName');
+        const cardSenderName = document.getElementById('cardSenderName');
+
+        // Modal Elements
+        const openCustomizeBtn = document.getElementById('openCustomizeBtn');
+        const customizeModal = document.getElementById('customizeModal');
+        const closeCustomizeModalBtn = document.getElementById('closeCustomizeModalBtn');
+        const cancelCustomizeBtn = document.getElementById('cancelCustomizeBtn');
+        const customizeForm = document.getElementById('customizeForm');
+        const recipientInput = document.getElementById('recipientInput');
+        const senderInput = document.getElementById('senderInput');
+        const customWishInput = document.getElementById('customWishInput');
+
+        /* ==========================================================================
+           2. XỬ LÝ MỞ / ĐÓNG PHONG BÌ & ĐỔI LỜI CHÚC
+           ========================================================================== */
+        function openGreetingCard() {
+            if (isEnvelopeOpen) return;
+            isEnvelopeOpen = true;
+
+            // Bật hiệu ứng mở nắp phong bì
+            envelopeElement.classList.add('open');
+            playSparkleChime();
+
+            // Bắn pháo giấy chào mừng
+            burstConfetti(110);
+
+            // Chuyển sang màn hình tấm thiệp chi tiết sau khi nắp mở
+            setTimeout(() => {
+                envelopeStage.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+                setTimeout(() => {
+                    envelopeStage.classList.add('hidden');
+                    cardStage.classList.remove('hidden');
+                    requestAnimationFrame(() => {
+                        cardStage.classList.remove('opacity-0', 'scale-95');
+                        cardStage.classList.add('opacity-100', 'scale-100');
+                    });
+                }, 320);
+            }, 650);
+        }
+
+        function closeGreetingCard() {
+            isEnvelopeOpen = false;
+            cardStage.classList.remove('opacity-100', 'scale-100');
+            cardStage.classList.add('opacity-0', 'scale-95');
+
+            setTimeout(() => {
+                cardStage.classList.add('hidden');
+                envelopeElement.classList.remove('open');
+                envelopeStage.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    envelopeStage.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                });
+            }, 350);
+        }
+
+        envelopeTrigger.addEventListener('click', openGreetingCard);
+        openCardActionBtn.addEventListener('click', openGreetingCard);
+        closeCardBtn.addEventListener('click', closeGreetingCard);
+
+        // Đổi lời chúc ngẫu nhiên theo chủ đề
+        function changeRandomWish() {
+            const filtered = currentCategory === 'all'
+                ? wishesDatabase
+                : wishesDatabase.filter(item => item.category === currentCategory);
+
+            if (filtered.length === 0) return;
+
+            let nextIndex = Math.floor(Math.random() * filtered.length);
+            if (filtered.length > 1 && filtered[nextIndex].text === wishContent.textContent.trim()) {
+                nextIndex = (nextIndex + 1) % filtered.length;
+            }
+
+            // Hiệu ứng mờ nhẹ khi đổi chữ
+            wishTextContainer.classList.add('opacity-0');
+            playSoftNote();
+
+            setTimeout(() => {
+                wishContent.textContent = filtered[nextIndex].text;
+                wishTextContainer.classList.remove('opacity-0');
+            }, 220);
+        }
+
+        randomWishBtn.addEventListener('click', changeRandomWish);
+
+        // Chọn chủ đề lời chúc
+        categoryButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentCategory = btn.getAttribute('data-category');
+                categoryButtons.forEach(b => {
+                    b.classList.remove('bg-pastel-500', 'text-white');
+                    b.classList.add('bg-pastel-100', 'text-pastel-700');
+                });
+                btn.classList.remove('bg-pastel-100', 'text-pastel-700');
+                btn.classList.add('bg-pastel-500', 'text-white');
+                changeRandomWish();
+            });
+        });
+
+        // Nút Tung Hoa / Bắn pháo giấy thêm
+        celebrateBtn.addEventListener('click', () => {
+            burstConfetti(90);
+            playSparkleChime();
+            showToast('🌸 Chúc ngày 20/10 ngập tràn niềm vui!');
+        });
+
+        // Sao chép lời chúc vào Clipboard (sử dụng document.execCommand('copy') an toàn trong iframe)
+        copyWishBtn.addEventListener('click', () => {
+            const fullText = `Thân gửi ${recipientName},\n\n"${wishContent.textContent.trim()}"\n\n— ${senderName} (Chúc mừng 20/10 🌸)`;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = fullText;
+            tempTextArea.style.position = 'fixed';
+            tempTextArea.style.left = '-9999px';
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            try {
+                document.execCommand('copy');
+                showToast('💌 Đã sao chép lời chúc 20/10 vào bộ nhớ tạm!');
+            } catch (err) {
+                showToast('Không thể sao chép tự động, bạn hãy bôi đen văn bản nhé!');
+            }
+            document.body.removeChild(tempTextArea);
+        });
+
+        /* ==========================================================================
+           3. MODAL CÁ NHÂN HÓA TÊN NGƯỜI NHẬN & LỜI CHÚC
+           ========================================================================== */
+        function toggleCustomizeModal(show) {
+            if (show) {
+                recipientInput.value = recipientName === 'Các bạn nữ xinh đẹp' ? '' : recipientName;
+                senderInput.value = senderName === 'Một người luôn quý mến bạn 💌' ? '' : senderName;
+                customizeModal.classList.remove('hidden');
+                customizeModal.classList.add('flex');
+                recipientInput.focus();
+            } else {
+                customizeModal.classList.add('hidden');
+                customizeModal.classList.remove('flex');
+            }
+        }
+
+        openCustomizeBtn.addEventListener('click', () => toggleCustomizeModal(true));
+        closeCustomizeModalBtn.addEventListener('click', () => toggleCustomizeModal(false));
+        cancelCustomizeBtn.addEventListener('click', () => toggleCustomizeModal(false));
+
+        customizeModal.addEventListener('click', (e) => {
+            if (e.target === customizeModal) toggleCustomizeModal(false);
+        });
+
+        customizeForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newRecipient = recipientInput.value.trim();
+            const newSender = senderInput.value.trim();
+            const customWish = customWishInput.value.trim();
+
+            recipientName = newRecipient || 'Các bạn nữ xinh đẹp';
+            senderName = newSender || 'Một người luôn quý mến bạn 💌';
+
+            envelopeRecipientPreview.textContent = recipientName;
+            cardRecipientName.textContent = recipientName;
+            cardSenderName.textContent = senderName;
+
+            if (customWish) {
+                wishContent.textContent = customWish;
+            }
+
+            toggleCustomizeModal(false);
+            burstConfetti(60);
+            showToast(`✨ Đã cập nhật thiệp dành tặng "${recipientName}"!`);
+        });
+
+        // Đọc tham số URL nếu có chia sẻ (?to=...&from=...)
+        (function loadFromUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            const toParam = params.get('to');
+            const fromParam = params.get('from');
+            if (toParam) {
+                recipientName = toParam;
+                envelopeRecipientPreview.textContent = recipientName;
+                cardRecipientName.textContent = recipientName;
+            }
+            if (fromParam) {
+                senderName = fromParam;
+                cardSenderName.textContent = senderName;
+            }
+        })();
+
+        // Hàm hiển thị Toast thông báo mượt mà
+        let toastTimeout;
+        function showToast(message) {
+            const toast = document.getElementById('toastNotification');
+            const msgEl = document.getElementById('toastMessage');
+            msgEl.textContent = message;
+            toast.classList.remove('opacity-0', 'translate-y-4');
+            toast.classList.add('opacity-100', 'translate-y-0');
+
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'translate-y-4');
+            }, 2800);
+        }
+
+        /* ==========================================================================
+           4. HỘP NHẠC NỀN NHẸ NHÀNG (WEB AUDIO API SYNTHESIZER - KHÔNG CẦN FILE MP3)
+           ========================================================================== */
+        let audioCtx = null;
+        let isMusicPlaying = false;
+        let musicLoopTimer = null;
+        let noteStep = 0;
+
+        // Giai điệu Music Box lãng mạn (Tần số Hz các nốt nhạc)
+        const melodyNotes = [
+            523.25, 659.25, 783.99, 1046.50, // C5 E5 G5 C6
+            880.00, 1046.50, 880.00, 659.25, // A5 C6 A5 E5
+            698.46, 880.00, 1046.50, 1318.51, // F5 A5 C6 E6
+            783.99, 987.77, 1174.66, 783.99,  // G5 B5 D6 G5
+            659.25, 783.99, 1046.50, 987.77,  // E5 G5 C6 B5
+            880.00, 698.46, 659.25, 587.33   // A5 F5 E5 D5
+        ];
+
+        function initAudioContext() {
+            if (!audioCtx) {
+                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                audioCtx = new AudioContextClass();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }
+
+        // Phát một nốt hộp nhạc êm dịu
+        function playMusicBoxTone(freq, duration = 1.4, volume = 0.08) {
+            if (!audioCtx) return;
+            const now = audioCtx.currentTime;
+
+            const osc = audioCtx.createOscillator();
+            const overtone = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, now);
+
+            overtone.type = 'triangle';
+            overtone.frequency.setValueAtTime(freq * 2, now);
+
+            gain.gain.setValueAtTime(0.001, now);
+            gain.gain.linearRampToValueAtTime(volume, now + 0.03);
+            gain.gain.exponentialRampToValueAtTime(0.0008, now + duration);
+
+            osc.connect(gain);
+            overtone.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start(now);
+            overtone.start(now);
+            osc.stop(now + duration);
+            overtone.stop(now + duration);
+        }
+
+        // Âm thanh lấp lánh khi mở thiệp
+        function playSparkleChime() {
+            try {
+                initAudioContext();
+                const sparkleFreqs = [523.25, 659.25, 783.99, 1046.50, 1318.51];
+                sparkleFreqs.forEach((f, idx) => {
+                    setTimeout(() => playMusicBoxTone(f, 1.1, 0.06), idx * 75);
+                });
+            } catch (e) {
+                // Bỏ qua nếu trình duyệt chặn âm thanh
+            }
+        }
+
+        function playSoftNote() {
+            try {
+                initAudioContext();
+                playMusicBoxTone(880, 0.7, 0.05);
+            } catch (e) {}
+        }
+
+        function toggleBackgroundMusic() {
+            initAudioContext();
+            const musicIcon = document.getElementById('musicIcon');
+            const musicStatusText = document.getElementById('musicStatusText');
+
+            if (isMusicPlaying) {
+                isMusicPlaying = false;
+                clearInterval(musicLoopTimer);
+                musicIcon.className = 'fa-solid fa-music';
+                musicStatusText.textContent = 'Bật nhạc';
+                showToast('🔇 Đã tạm dừng nhạc nền');
+            } else {
+                isMusicPlaying = true;
+                musicIcon.className = 'fa-solid fa-compact-disc spin-music';
+                musicStatusText.textContent = 'Đang phát nhạc';
+                showToast('🎵 Đang phát giai điệu hộp nhạc 20/10');
+
+                // Phát nốt đầu tiên ngay lập tức
+                playMusicBoxTone(melodyNotes[noteStep % melodyNotes.length], 1.6, 0.075);
+                noteStep++;
+
+                musicLoopTimer = setInterval(() => {
+                    if (!isMusicPlaying) return;
+                    const freq = melodyNotes[noteStep % melodyNotes.length];
+                    playMusicBoxTone(freq, 1.6, 0.075);
+                    noteStep++;
+                }, 460);
+            }
+        }
+
+        document.getElementById('musicToggleBtn').addEventListener('click', toggleBackgroundMusic);
+
+        /* ==========================================================================
+           5. HIỆU ỨNG CÁNH HOA RƠI & TRÁI TIM BAY LƠ LỬNG (CANVAS NỀN)
+           ========================================================================== */
+        const petalCanvas = document.getElementById('petalCanvas');
+        const pCtx = petalCanvas.getContext('2d');
+        let petals = [];
+
+        function resizePetalCanvas() {
+            petalCanvas.width = window.innerWidth;
+            petalCanvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizePetalCanvas);
+        resizePetalCanvas();
+
+        class FloatingItem {
+            constructor() {
+                this.reset(true);
+            }
+
+            reset(initial = false) {
+                this.x = Math.random() * petalCanvas.width;
+                this.y = initial ? Math.random() * petalCanvas.height : -30;
+                this.size = 7 + Math.random() * 10;
+                this.speedY = 0.6 + Math.random() * 1.1;
+                this.speedX = -0.4 + Math.random() * 0.8;
+                this.angle = Math.random() * Math.PI * 2;
+                this.spinSpeed = -0.02 + Math.random() * 0.04;
+                this.opacity = 0.35 + Math.random() * 0.45;
+                this.isHeart = Math.random() < 0.28; // 28% là trái tim nhỏ, 72% là cánh hoa đào/hồng
+                const colors = ['#ffb3c6', '#ff8fab', '#ffc2d1', '#fb6f92', '#ffe5ec'];
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+            }
+
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX + Math.sin(this.angle) * 0.4;
+                this.angle += this.spinSpeed;
+
+                if (this.y > petalCanvas.height + 30) {
+                    this.reset(false);
+                }
+                if (this.x > petalCanvas.width + 30) this.x = -20;
+                if (this.x < -30) this.x = petalCanvas.width + 20;
+            }
+
+            draw() {
+                pCtx.save();
+                pCtx.translate(this.x, this.y);
+                pCtx.rotate(this.angle);
+                pCtx.globalAlpha = this.opacity;
+                pCtx.fillStyle = this.color;
+
+                if (this.isHeart) {
+                    // Vẽ trái tim mềm mại
+                    const s = this.size * 0.65;
+                    pCtx.beginPath();
+                    pCtx.moveTo(0, s / 4);
+                    pCtx.bezierCurveTo(0, 0, -s, 0, -s, s / 2);
+                    pCtx.bezierCurveTo(-s, s, 0, s * 1.3, 0, s * 1.6);
+                    pCtx.bezierCurveTo(0, s * 1.3, s, s, s, s / 2);
+                    pCtx.bezierCurveTo(s, 0, 0, 0, 0, s / 4);
+                    pCtx.fill();
+                } else {
+                    // Vẽ cánh hoa hồng pastel
+                    pCtx.beginPath();
+                    pCtx.ellipse(0, 0, this.size, this.size * 0.58, 0, 0, Math.PI * 2);
+                    pCtx.fill();
+                }
+
+                pCtx.restore();
+            }
+        }
+
+        // Khởi tạo 40 cánh hoa & trái tim
+        for (let i = 0; i < 40; i++) {
+            petals.push(new FloatingItem());
+        }
+
+        function animatePetals() {
+            pCtx.clearRect(0, 0, petalCanvas.width, petalCanvas.height);
+            petals.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animatePetals);
+        }
+
+        /* ==========================================================================
+           6. HIỆU ỨNG PHÁO GIẤY (CONFETTI) KHI MỞ THIỆP
+           ========================================================================== */
+        const confettiCanvas = document.getElementById('confettiCanvas');
+        const cCtx = confettiCanvas.getContext('2d');
+        let confettiParticles = [];
+
+        function resizeConfettiCanvas() {
+            confettiCanvas.width = window.innerWidth;
+            confettiCanvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeConfettiCanvas);
+        resizeConfettiCanvas();
+
+        function burstConfetti(count = 100) {
+            const colors = ['#fb6f92', '#ff8fab', '#ffb3c6', '#ffd166', '#cdb4db', '#ff4d6d', '#ffffff'];
+            const originX = confettiCanvas.width / 2;
+            const originY = confettiCanvas.height * 0.55;
+
+            for (let i = 0; i < count; i++) {
+                const angle = Math.random() * Math.PI * 2;
+                const velocity = 5 + Math.random() * 12;
+                confettiParticles.push({
+                    x: originX,
+                    y: originY,
+                    vx: Math.cos(angle) * velocity,
+                    vy: Math.sin(angle) * velocity - 6,
+                    size: 6 + Math.random() * 6,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    rotation: Math.random() * 360,
+                    rotationSpeed: -8 + Math.random() * 16,
+                    gravity: 0.22,
+                    drag: 0.985,
+                    opacity: 1
+                });
+            }
+        }
+
+        function animateConfetti() {
+            cCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+
+            for (let i = confettiParticles.length - 1; i >= 0; i--) {
+                const p = confettiParticles[i];
+                p.vx *= p.drag;
+                p.vy *= p.drag;
+                p.vy += p.gravity;
+                p.x += p.vx;
+                p.y += p.vy;
+                p.rotation += p.rotationSpeed;
+                p.opacity -= 0.008;
+
+                if (p.opacity <= 0 || p.y > confettiCanvas.height + 40) {
+                    confettiParticles.splice(i, 1);
+                    continue;
+                }
+
+                cCtx.save();
+                cCtx.translate(p.x, p.y);
+                cCtx.rotate((p.rotation * Math.PI) / 180);
+                cCtx.globalAlpha = Math.max(0, p.opacity);
+                cCtx.fillStyle = p.color;
+                cCtx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.65);
+                cCtx.restore();
+            }
+
+            requestAnimationFrame(animateConfetti);
+        }
+
+        // Bắt đầu các vòng lặp hoạt ảnh khi trang tải xong
+        window.onload = function () {
+            animatePetals();
+            animateConfetti();
+        };
+    </script>
+</body>
+</html>
